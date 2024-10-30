@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5 shadow">
+        <div class="col-lg-6 p-4">
+            <h3>Login Form</h3>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <img src="{% static 'images/login.png' %}" class="img-fluid img-responsive" alt="...">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
